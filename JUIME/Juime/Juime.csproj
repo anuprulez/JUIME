@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69116321-158E-441F-BABA-4081AE5976DA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Juime</RootNamespace>
+    <AssemblyName>Juime</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>JuimeKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\BaseAttribute.cs" />
+    <Compile Include="Attributes\CustomHtmlAttribute.cs" />
+    <Compile Include="Attributes\JsonSerializableAttribute.cs" />
+    <Compile Include="Builder\AccordionBuilder.cs" />
+    <Compile Include="Builder\AccordionSectionBuilder.cs" />
+    <Compile Include="Builder\AccordionSectionFactory.cs" />
+    <Compile Include="Builder\AccordionOptionBuilder.cs" />
+    <Compile Include="Builder\BaseBuilder.cs" />
+    <Compile Include="Builder\ControlOptionBuilder.cs" />
+    <Compile Include="Builder\ControlBindBuilder.cs" />
+    <Compile Include="Builder\AutoCompleteBuilder.cs" />
+    <Compile Include="Builder\AutoCompleteBindBuilder.cs" />
+    <Compile Include="Builder\AutoCompleteOptionBuilder.cs" />
+    <Compile Include="Builder\DatePickerBindBuilder.cs" />
+    <Compile Include="Builder\DatePickerOptionBuilder.cs" />
+    <Compile Include="Builder\DatePickerBuilder.cs" />
+    <Compile Include="Builder\TabBuilder.cs" />
+    <Compile Include="Builder\TabOptionBuilder.cs" />
+    <Compile Include="Builder\TabPanelBuilder.cs" />
+    <Compile Include="Builder\TabPanelFactory.cs" />
+    <Compile Include="Extensions\Accordion.cs" />
+    <Compile Include="Extensions\AccordionSection.cs" />
+    <Compile Include="Extensions\AccordionOption.cs" />
+    <Compile Include="Extensions\AutoComplete.cs" />
+    <Compile Include="Extensions\AutoCompleteBind.cs" />
+    <Compile Include="Extensions\AutoCompleteOption.cs" />
+    <Compile Include="Extensions\DatePickerBind.cs" />
+    <Compile Include="Extensions\DatePickerOption.cs" />
+    <Compile Include="Extensions\DatePicker.cs" />
+    <Compile Include="Extensions\Tab.cs" />
+    <Compile Include="Extensions\TabOption.cs" />
+    <Compile Include="Extensions\TabPanel.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Shared\Control.cs" />
+    <Compile Include="Builder\ControlBuilder.cs" />
+    <Compile Include="Shared\ControlOptions.cs" />
+    <Compile Include="Shared\AttributeHelper.cs" />
+    <Compile Include="Shared\ControlBind.cs" />
+    <Compile Include="Shared\Juime.cs" />
+    <Compile Include="Shared\JuimeHelperExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JuimeKey.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

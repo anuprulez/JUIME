@@ -1,0 +1,135 @@
+﻿
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+    @using Juime
+<head>
+    <meta charset="utf-8" />
+
+    @*Set the viewport width to device width for mobile *@
+    <meta name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title - Welcome to Juime</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="~/Scripts/ControlInitializer.js"></script>
+</head>
+<body>
+@{
+    ViewBag.Title = "JqueryUiHelperControls";
+}
+
+<h2>JQueryUI Helper Controls</h2>
+    <div><b>Accordion</b></div>
+    @(Html.Juime().Accordion("accordion")
+                .Options(option =>
+                    {
+                        option.Collapsible = true;
+                        option.Active = 0;
+                        option.CssClass = "myContentnew";
+                        option.HtmlAttributeList = new {
+                            AttributeA = "A",
+                            AttributeB = "B"
+                        };
+                    }
+                )
+                .Sections(sections=>
+                    {
+                        sections.Add(section =>
+                                {
+                                    section.Header = "first";
+                                    section.Text = "Content1";
+                                }
+                            );
+                        sections.Add(section =>
+                                {
+                                    section.Header = "second";
+                                    section.Text = "Content2";
+                                }
+                            );
+                    }
+                )
+    )
+    <br/>
+    <br/>
+    <div><b>Datepicker</b></div>
+
+    @(Html.Juime().DatePicker("datePicker")
+                    .Options(option =>
+                        {
+                            option.IsRtl = false;
+                            option.CssClass = "myContent";
+                            option.HtmlAttributeList = new
+                            {
+                                AttributeA = "A",
+                                AttributeB = "B"
+                            };
+                        }
+                    )
+                    .Bind(item =>
+                        {
+                            item.Value = new DateTime(); 
+                        }
+                    )
+    )
+    <br/>
+    <br/>
+    <div><b>Autocomplete</b></div>
+    @(Html.Juime().AutoComplete("autoComplete")
+                    .Options(option =>
+                        {
+                            option.Disabled = false;
+                            option.CssClass = "myContentcom";
+                            option.HtmlAttributeList = new
+                            {
+                                AttributeA = "A",
+                                AttributeB = "B"
+                            };
+                        }
+                    )
+                    .Bind(item =>
+                        {
+                            item.Value = "--country--";
+                            item.Source = new List<string> { "India", "US", "UK", "France", "Germany", "Australia" };
+                        }
+                    )
+    )
+
+    <br/>
+    <br/>
+    <div><b>Tab Strip</b></div>
+    @(Html.Juime().Tab("tab")
+                .Options(option =>
+                    {
+                        option.Collapsible = true;
+                        option.Active = 1;
+                        option.HtmlAttributeList = new {
+                            AttributeA = "A",
+                            AttributeB = "B"
+                        };
+                    }
+                )
+                .Panels(panels=>
+                    {
+                        panels.Add(panel =>
+                                {
+                                    panel.Header = "First Tab";
+                                    panel.Text = "Sample Content for First Tab";
+                                }
+                            );
+                        panels.Add(panel =>
+                                {
+                                    panel.Header = "Second Tab";
+                                    panel.Text = "Sample Content for Second Tab";
+                                }
+                            );
+                    }
+                )
+    )
+
+
+</body>
+</html>

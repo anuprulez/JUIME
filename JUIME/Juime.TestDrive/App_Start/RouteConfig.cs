@@ -16,7 +16,7 @@ namespace Juime.TestDrive
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Juime", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
